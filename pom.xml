@@ -14,6 +14,6 @@
         <module>gmall-member</module>
         <module>gmall-order</module>
         <module>gmall-product</module>
-        <module>renren-fast</module>
+        <module>gmall-admin</module>
     </modules>
 </project>
