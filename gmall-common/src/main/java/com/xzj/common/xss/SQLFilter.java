@@ -8,7 +8,7 @@
 
 package com.xzj.common.xss;
 
-import com.xzj.common.exception.RRException;
+import com.xzj.common.utils.RRException;
 import org.apache.commons.lang.StringUtils;
 
 /**

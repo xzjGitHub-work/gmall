@@ -6,7 +6,7 @@
  * 版权所有，侵权必究！
  */
 
-package com.xzj.common.exception;
+package com.xzj.common.utils;
 
 /**
  * 自定义异常

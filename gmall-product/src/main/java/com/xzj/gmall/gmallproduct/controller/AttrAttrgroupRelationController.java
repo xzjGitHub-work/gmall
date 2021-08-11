@@ -3,7 +3,6 @@ package com.xzj.gmall.gmallproduct.controller;
 import java.util.Arrays;
 import java.util.Map;
 
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -23,7 +22,7 @@ import com.xzj.common.utils.R;
  *
  * @author xuzhaoju
  * @email xuzhaoju@gmail.com
- * @date 2021-08-11 10:44:28
+ * @date 2021-08-11 14:34:26
  */
 @RestController
 @RequestMapping("gmallproduct/attrattrgrouprelation")

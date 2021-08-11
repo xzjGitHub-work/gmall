@@ -9,7 +9,7 @@ import org.apache.ibatis.annotations.Mapper;
  * 
  * @author xuzhaoju
  * @email xuzhaoju@gmail.com
- * @date 2021-08-11 10:44:28
+ * @date 2021-08-11 14:34:26
  */
 @Mapper
 public interface SpuImagesDao extends BaseMapper<SpuImagesEntity> {

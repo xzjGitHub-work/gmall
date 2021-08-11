@@ -11,7 +11,7 @@ import java.util.Map;
  *
  * @author xuzhaoju
  * @email xuzhaoju@gmail.com
- * @date 2021-08-11 10:44:27
+ * @date 2021-08-11 14:34:26
  */
 public interface ProductAttrValueService extends IService<ProductAttrValueEntity> {
 
