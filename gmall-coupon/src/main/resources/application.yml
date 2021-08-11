@@ -4,7 +4,7 @@ spring:
     password: root
     url: jdbc:mysql://192.168.56.10:3306/gmall_sms
     driver-class-name: com.mysql.jdbc.Driver
-  #配置nacoc注册中心
+  #配置nacos注册中心
   cloud:
     nacos:
       discovery:
