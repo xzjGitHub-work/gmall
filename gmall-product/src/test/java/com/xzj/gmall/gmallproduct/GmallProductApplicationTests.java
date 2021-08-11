@@ -49,12 +49,15 @@ class GmallProductApplicationTests {
     void contextLoadsByUpdate() {
         BrandEntity entity = new BrandEntity();
         entity.setDescript("咸安慧&&许兆举");
-        entity.setBrandId(1l);
-
         QueryWrapper<BrandEntity> wrapper = new QueryWrapper();
-
-        brandService.update(wrapper);
+        wrapper.eq("logo","LOVE");
+        brandService.update(entity,wrapper);
+        System.out.println("修改成功");
+        System.out.println("======================"+brandService.getById(1l)+"======================");
+        entity.setDescript("许兆举&&咸安慧");
+        entity.setBrandId(1l);
         brandService.updateById(entity);
+        System.out.println("======================"+brandService.getById(1l)+"======================");
     }
 
     /**
