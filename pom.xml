@@ -9,8 +9,8 @@
     <description>服务聚合</description>
     <packaging>pom</packaging>
     <modules>
-        <module>gamll-coupon</module>
-        <module>gamll-ware</module>
+        <module>gmall-coupon</module>
+        <module>gmall-ware</module>
         <module>gmall-member</module>
         <module>gmall-order</module>
         <module>gmall-product</module>

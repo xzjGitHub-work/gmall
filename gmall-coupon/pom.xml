@@ -8,10 +8,10 @@
         <version>2.5.3</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
-    <groupId>com.xzj.gamll</groupId>
-    <artifactId>gamll-coupon</artifactId>
+    <groupId>com.xzj.gmall</groupId>
+    <artifactId>gmall-coupon</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>gamll-coupon</name>
+    <name>gmall-coupon</name>
     <description>商城-优惠卷服务</description>
     <properties>
         <java.version>1.8</java.version>
