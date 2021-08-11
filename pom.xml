@@ -15,5 +15,6 @@
         <module>gmall-order</module>
         <module>gmall-product</module>
         <module>gmall-admin</module>
+        <module>gmall-generator</module>
     </modules>
 </project>
