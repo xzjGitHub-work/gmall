@@ -4,7 +4,7 @@ spring:
     password: root
     url: jdbc:mysql://192.168.56.10:3306/gmall_wms
     driver-class-name: com.mysql.jdbc.Driver
-  #配置nacos注册中心
+  #閰嶇疆nacos娉ㄥ唽涓績
   cloud:
     nacos:
       discovery:
@@ -12,10 +12,10 @@ spring:
 
   application:
     name: gmall-member
-#设置mapper地址
+#璁剧疆mapper鍦板潃
 mybatis-plus:
   mapper-locations: classpath:/mapper/**/*.xml
-  #  设置主键自增
+  #  璁剧疆涓婚敭鑷
   global-config:
     db-config:
       id-type: auto
