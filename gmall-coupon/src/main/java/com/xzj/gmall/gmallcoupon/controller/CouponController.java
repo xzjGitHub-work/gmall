@@ -1,9 +1,12 @@
 package com.xzj.gmall.gmallcoupon.controller;
 
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.Map;
 
+import com.google.common.collect.Maps;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -31,6 +34,29 @@ public class CouponController {
     private CouponService couponService;
 
 
+    @Value("${user.name-Id}")
+    String name ;
+    @Value("${user.age}")
+    Integer age ;
+    @Value("${user.gender}")
+    String gender ;
+
+    /**
+     * @describe:之前获取配置中心的数据
+     *
+     * @author:xzj
+     * @createDate:2021/8/12 15:28
+     * @param:[]
+     * @return:java.lang.String
+     */
+    @RequestMapping("/testConfig")
+    public R testConfig(){
+        Map<String,String> map = new HashMap<>(8);
+        map.put("name",name);
+        map.put("age",age+"");
+        map.put("gender",gender);
+        return R.ok().put("data",map);
+    }
     /**
      * @describe:测试Feign
      *

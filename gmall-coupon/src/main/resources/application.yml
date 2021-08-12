@@ -20,3 +20,8 @@ mybatis-plus:
       id-type: auto
 server:
   port: 7000
+
+user:
+  name-Id: xuzhaoju
+  age: 20
+  gender: man
