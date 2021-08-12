@@ -3,6 +3,8 @@ package com.xzj.gmall.gmallmember.controller;
 import java.util.Arrays;
 import java.util.Map;
 
+import com.xzj.gmall.gmallmember.entity.MemberEntity;
+import com.xzj.gmall.gmallmember.feign.GmallCouponService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -29,6 +31,19 @@ import com.xzj.common.utils.R;
 public class GrowthChangeHistoryController {
     @Autowired
     private GrowthChangeHistoryService growthChangeHistoryService;
+
+    @Autowired
+    private GmallCouponService gmallCoupon;
+
+    @RequestMapping("/testFeignByMember")
+    public R testFeignByMember() {
+        MemberEntity entity = new MemberEntity();
+        entity.setNickname("张三");
+        R r = gmallCoupon.testFeign();
+        return R.ok("success").put("member",entity)
+                .put("coupon",r.get("coupon"));
+    }
+
 
     /**
      * 列表

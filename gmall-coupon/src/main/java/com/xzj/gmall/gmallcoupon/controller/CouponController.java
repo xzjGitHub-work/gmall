@@ -30,6 +30,21 @@ public class CouponController {
     @Autowired
     private CouponService couponService;
 
+
+    /**
+     * @describe:测试Feign
+     *
+     * @author:xzj
+     * @createDate:2021/8/12 0:15
+     * @param:
+     * @return:
+     */
+    @RequestMapping("/testFeign")
+    public R testFeign(){
+        CouponEntity entity = new CouponEntity();
+        entity.setCouponName("许兆举&咸安慧");
+        return R.ok("success").put("coupon",Arrays.asList(entity));
+    }
     /**
      * 列表
      */
