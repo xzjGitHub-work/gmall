@@ -1,8 +1,6 @@
 package com.xzj.gmall.gmallproduct;
 
-import com.baomidou.mybatisplus.core.conditions.Wrapper;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
-import com.xzj.common.utils.PageUtils;
 import com.xzj.gmall.gmallproduct.entity.BrandEntity;
 import com.xzj.gmall.gmallproduct.service.BrandService;
 import org.junit.jupiter.api.Test;

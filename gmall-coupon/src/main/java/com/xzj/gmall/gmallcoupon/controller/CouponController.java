@@ -1,9 +1,13 @@
 package com.xzj.gmall.gmallcoupon.controller;
 
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.Map;
 
+import com.google.common.collect.Maps;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -24,12 +28,79 @@ import com.xzj.common.utils.R;
  * @email xuzhaoju@gmail.com
  * @date 2021-08-11 16:10:37
  */
+@RefreshScope
 @RestController
 @RequestMapping("gmallcoupon/coupon")
 public class CouponController {
     @Autowired
     private CouponService couponService;
 
+
+    @Value("${user.name-Id}")
+    String name ;
+    @Value("${user.age}")
+    Integer age ;
+    @Value("${user.gender}")
+    String gender ;
+
+    /**
+     * @describe:之前获取配置中心的数据
+     *
+     * @author:xzj
+     * @createDate:2021/8/12 15:28
+     * @param:[]
+     * @return:java.lang.String
+     */
+    @RequestMapping("/testConfigByLocalYml")
+    public R testConfigByLocalYml(){
+        Map<String,String> map = new HashMap<>(8);
+        map.put("name",name);
+        map.put("age",age+"");
+        map.put("gender",gender);
+        return R.ok().put("data",map);
+    }
+    @Value("${user.name.properties}")
+    String userName;
+
+    @Value("${user.age.properties}")
+    String userAge;
+
+    @Value("${user.gender.properties}")
+    String userGender;
+
+    @Value("${user.properties.name}")
+    String userNameByProperties;
+    /**
+     * @describe:测试在nacos中获取数据
+     *
+     * @author:xzj
+     * @createDate:2021/8/12 16:38
+     * @param:[]
+     * @return:com.xzj.common.utils.R
+     */
+    @RequestMapping("/testConfigByNacosProperties")
+    public R testConfigByNacosProperties(){
+        Map<String,String> map = new HashMap<>(8);
+        map.put("userName",userName);
+        map.put("userAge",userAge+"");
+        map.put("userGender",userGender);
+        map.put("userNameByProperties",userNameByProperties);
+        return R.ok().put("data",map);
+    }
+    /**
+     * @describe:测试Feign
+     *
+     * @author:xzj
+     * @createDate:2021/8/12 0:15
+     * @param:
+     * @return:
+     */
+    @RequestMapping("/testFeign")
+    public R testFeign(){
+        CouponEntity entity = new CouponEntity();
+        entity.setCouponName("许兆举&咸安慧");
+        return R.ok("success").put("coupon",Arrays.asList(entity));
+    }
     /**
      * 列表
      */
