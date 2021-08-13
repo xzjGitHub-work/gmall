@@ -1,4 +1,4 @@
-package com.xzj.gmall.gmallcoupon;
+package com.xzj.gamll.gamllcoupon;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

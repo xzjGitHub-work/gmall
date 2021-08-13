@@ -18,4 +18,53 @@
         <module>gmall-generator</module>
         <module>gmall-common</module>
     </modules>
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.1.8.RELEASE</version>
+        <relativePath/> <!-- lookup parent from repository -->
+    </parent>
+
+    <build>
+        <resources>
+            <resource>
+                <directory>src/main/resources</directory>
+                <filtering>true</filtering>
+                <includes>
+                    <include>application.yml</include>
+                    <include>application-${envProperties}.yml</include>
+                    <include>bootstrap.properties</include>
+                </includes>
+            </resource>
+        </resources>
+    </build>
+
+    <profiles>
+        <profile>
+            <id>local</id>
+            <properties>
+                <envProperties>local</envProperties>
+                <namespace>f25c6e14-cb64-4ae1-80a6-edb3629eb1ba</namespace>
+            </properties>
+        </profile>
+
+        <profile>
+            <id>dev</id>
+            <properties>
+                <envProperties>dev</envProperties>
+                <namespace>f25c6e14-cb64-4ae1-80a6-edb3629eb1ba</namespace>
+            </properties>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+        </profile>
+
+        <profile>
+            <id>pro</id>
+            <properties>
+                <envProperties>pro</envProperties>
+                <namespace>f25c6e14-cb64-4ae1-80a6-edb3629eb1ba</namespace>
+            </properties>
+        </profile>
+    </profiles>
 </project>

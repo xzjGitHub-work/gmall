@@ -67,6 +67,9 @@ public class CouponController {
 
     @Value("${user.gender.properties}")
     String userGender;
+
+    @Value("${user.properties.name}")
+    String userNameByProperties;
     /**
      * @describe:测试在nacos中获取数据
      *
@@ -81,6 +84,7 @@ public class CouponController {
         map.put("userName",userName);
         map.put("userAge",userAge+"");
         map.put("userGender",userGender);
+        map.put("userNameByProperties",userNameByProperties);
         return R.ok().put("data",map);
     }
     /**
