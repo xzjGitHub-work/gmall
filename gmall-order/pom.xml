@@ -7,7 +7,11 @@
         <artifactId>gmall</artifactId>
         <version>0.0.1-SNAPSHOT</version>
     </parent>
+
+    <groupId>com.xzj.gmall</groupId>
     <artifactId>gmall-order</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+
     <name>gmall-order</name>
     <description>商城-订单服务</description>
     <properties>
