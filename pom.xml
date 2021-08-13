@@ -44,7 +44,7 @@
             <id>local</id>
             <properties>
                 <envProperties>local</envProperties>
-                <namespace>f25c6e14-cb64-4ae1-80a6-edb3629eb1ba</namespace>
+                <namespace>95a22066-6317-4749-bdf8-02591786acf9</namespace>
             </properties>
         </profile>
 
@@ -63,7 +63,7 @@
             <id>pro</id>
             <properties>
                 <envProperties>pro</envProperties>
-                <namespace>f25c6e14-cb64-4ae1-80a6-edb3629eb1ba</namespace>
+                <namespace>b86fd252-0901-483e-9e44-1e760b58e44f</namespace>
             </properties>
         </profile>
     </profiles>
