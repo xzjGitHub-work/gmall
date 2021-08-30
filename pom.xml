@@ -35,6 +35,8 @@
                     <include>application.yml</include>
                     <include>application-${envProperties}.yml</include>
                     <include>bootstrap.properties</include>
+                    <include>mapper/**.xml</include>
+                    <include>mapper/**/**.xml</include>
                 </includes>
             </resource>
         </resources>
