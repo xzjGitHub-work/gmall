@@ -1,6 +1,7 @@
 package com.xzj.gmall.gmallproduct.controller;
 
 import java.util.Arrays;
+import java.util.List;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,6 +30,18 @@ import com.xzj.common.utils.R;
 public class CategoryController {
     @Autowired
     private CategoryService categoryService;
+
+
+    /**
+     * 查询出所有分类的子类，以树形结构组装起来
+     */
+    @RequestMapping("/list/tree")
+    //@RequiresPermissions("gmallproduct:category:list")
+    public R listTree(){
+        List<CategoryEntity> list = categoryService.listWithTree();
+        return R.ok().put("data",list);
+    }
+
 
     /**
      * 列表
