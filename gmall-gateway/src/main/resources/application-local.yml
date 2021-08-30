@@ -15,3 +15,12 @@ spring:
           predicates:
             - Query=url,qq
 
+
+
+        - id: admin_route
+          uri: lb://gmall-admin-@envProperties@
+          predicates:
+            - Path=/api/**
+          filters:
+            - RewritePath=/api/(?<segment>.*),/gmall-admin/$\{segment}
+
