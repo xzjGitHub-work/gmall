@@ -17,10 +17,17 @@ spring:
 
 
 
-        - id: admin_route
+        - id: admin-route
           uri: lb://gmall-admin-@envProperties@
           predicates:
             - Path=/api/**
           filters:
             - RewritePath=/api/(?<segment>.*),/gmall-admin/$\{segment}
+
+        - id: product-route
+          uri: lb://gmall_product-@envProperties@
+          predicates:
+            - Path=/api/product/**
+          filters:
+            - RewritePath=/api/(?<segment>.*),/$\{segment}
 
