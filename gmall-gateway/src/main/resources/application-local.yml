@@ -16,6 +16,12 @@ spring:
             - Query=url,qq
 
 
+        - id: product-route
+          uri: lb://gmall-product-@envProperties@
+          predicates:
+            - Path=/api/gmallproduct/**
+          filters:
+            - RewritePath=/api/(?<segment>.*),/$\{segment}
 
         - id: admin-route
           uri: lb://gmall-admin-@envProperties@
@@ -24,10 +30,4 @@ spring:
           filters:
             - RewritePath=/api/(?<segment>.*),/gmall-admin/$\{segment}
 
-        - id: product-route
-          uri: lb://gmall_product-@envProperties@
-          predicates:
-            - Path=/api/product/**
-          filters:
-            - RewritePath=/api/(?<segment>.*),/$\{segment}
 

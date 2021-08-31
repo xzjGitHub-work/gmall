@@ -36,7 +36,7 @@ public class CategoryServiceImpl extends ServiceImpl<CategoryDao, CategoryEntity
     @Override
     public List<CategoryEntity> listWithTree() {
         List<CategoryEntity> list = baseMapper.selectList(null);
-        //todo 查询父类的标签
+        //查询父类的标签
         List<CategoryEntity> fatherList = list.stream()
                 //查找父类
                 .filter(o -> o.getParentCid() == 0)
@@ -50,6 +50,12 @@ public class CategoryServiceImpl extends ServiceImpl<CategoryDao, CategoryEntity
                     return (n1.getSort() == null ? 0 : n1.getSort()) - (n2.getSort() == null ? 0 : n2.getSort());
                 }).collect(Collectors.toList());
         return fatherList;
+    }
+
+    @Override
+    public void removeByIdsAndList(List<Long> longs) {
+        //todo 校验是否被依赖
+        baseMapper.deleteBatchIds(longs);
     }
 
     public List<CategoryEntity> getChildList(CategoryEntity entity, List<CategoryEntity> list) {
