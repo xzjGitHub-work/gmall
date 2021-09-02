@@ -6,7 +6,7 @@ import com.aliyun.oss.OSSClientBuilder;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.xzj.gmall.gmallproduct.entity.BrandEntity;
 import com.xzj.gmall.gmallproduct.service.BrandService;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
