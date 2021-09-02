@@ -1,5 +1,6 @@
 server:
   port: 88
+
 spring:
   cloud:
     gateway:
@@ -23,11 +24,17 @@ spring:
           filters:
             - RewritePath=/api/(?<segment>.*),/$\{segment}
 
+        - id: lib-route
+          uri: lb://gmall-product-@envProperties@
+          predicates:
+            - Path=/api/gmalllib/**
+          filters:
+            - RewritePath=/api/(?<segment>.*),/$\{segment}
+
         - id: admin-route
           uri: lb://gmall-admin-@envProperties@
           predicates:
             - Path=/api/**
           filters:
             - RewritePath=/api/(?<segment>.*),/gmall-admin/$\{segment}
-
 

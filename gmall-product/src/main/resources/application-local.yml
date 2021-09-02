@@ -1,8 +1,19 @@
 server:
   port: 10000
-alibaba:
-  cloud:
-    access-key: LTAI5tDqZoQ7Gv655PLfjArr
-    secret-key: tGUS5FHrQBwYEARIhycXAM1n6v2piC
-    oss:
-      endpoint: oss-cn-beijing.aliyuncs.com
+#设置mapper地址
+mybatis-plus:
+  mapper-locations: classpath:/mapper/**/*.xml
+  global-config:
+    db-config:
+      #  设置主键自增
+      id-type: auto
+      # 设置逻辑删除
+      logic-delete-value: 1 # 逻辑已删除值(默认为 1)
+      logic-not-delete-value: 0 # 逻辑未删除值(默认为 0)
+
+spring:
+  datasource:
+    username: root
+    password: root
+    url: jdbc:mysql://192.168.56.10:3306/gmall_sms?characterEncoding=utf-8
+    driver-class-name: com.mysql.jdbc.Driver

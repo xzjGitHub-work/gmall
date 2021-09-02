@@ -24,7 +24,7 @@ import java.util.Map;
  * @CreateDate: 2021/9/2 17:42
  */
 @RestController
-@RequestMapping("/lib")
+@RequestMapping("/gmalllib")
 public class OssController {
 
     @Autowired
