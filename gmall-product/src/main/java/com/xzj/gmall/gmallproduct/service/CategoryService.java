@@ -32,5 +32,14 @@ public interface CategoryService extends IService<CategoryEntity> {
      * @return:void
      */
     void removeByIdsAndList(List<Long> longs);
+    /**
+     * @describe:保存或者添加接口
+     *
+     * @author:xzj
+     * @createDate:2021/9/1 17:31
+     * @param:[category]
+     * @return:void
+     */
+    void edit(CategoryEntity category);
 }
 

@@ -18,6 +18,7 @@ import com.xzj.common.utils.Query;
 import com.xzj.gmall.gmallproduct.dao.CategoryDao;
 import com.xzj.gmall.gmallproduct.entity.CategoryEntity;
 import com.xzj.gmall.gmallproduct.service.CategoryService;
+import org.springframework.util.ObjectUtils;
 
 
 @Service("categoryService")
@@ -58,9 +59,18 @@ public class CategoryServiceImpl extends ServiceImpl<CategoryDao, CategoryEntity
         baseMapper.deleteBatchIds(longs);
     }
 
-    public List<CategoryEntity> getChildList(CategoryEntity entity, List<CategoryEntity> list) {
+    @Override
+    public void edit(CategoryEntity category) {
+        if (ObjectUtils.isEmpty(category.getCatId())){
+            baseMapper.insert(category);
+        }else {
+            baseMapper.updateById(category);
+        }
+    }
+
+    public List<CategoryEntity> getChildList(CategoryEntity categoryEntity, List<CategoryEntity> list) {
         return list.stream()
-                .filter(o -> o.getParentCid() == entity.getCatId())
+                .filter(o -> categoryEntity.getCatId() - o.getParentCid() == 0 )
                 .map(o -> {
                     o.setChild(getChildList(o, list));
                     return o;

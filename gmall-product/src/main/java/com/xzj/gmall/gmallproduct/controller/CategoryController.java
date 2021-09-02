@@ -101,4 +101,19 @@ public class CategoryController {
         return R.ok();
     }
 
+    /**
+     * 保存或者添加接口
+     */
+    @RequestMapping("/edit")
+    //@RequiresPermissions("gmallproduct:category:delete")
+    public R edit(@RequestBody CategoryEntity category){
+        try {
+            categoryService.edit(category);
+        }catch (Exception e){
+            e.printStackTrace();
+            return R.error("系统异常");
+        }
+        return R.ok();
+    }
+
 }
