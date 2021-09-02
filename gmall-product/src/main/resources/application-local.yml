@@ -1,2 +1,8 @@
 server:
   port: 10000
+alibaba:
+  cloud:
+    access-key: LTAI5tDqZoQ7Gv655PLfjArr
+    secret-key: tGUS5FHrQBwYEARIhycXAM1n6v2piC
+    oss:
+      endpoint: oss-cn-beijing.aliyuncs.com
