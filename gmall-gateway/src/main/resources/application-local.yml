@@ -25,7 +25,7 @@ spring:
             - RewritePath=/api/(?<segment>.*),/$\{segment}
 
         - id: lib-route
-          uri: lb://gmall-product-@envProperties@
+          uri: lb://gmall-lib-@envProperties@
           predicates:
             - Path=/api/gmalllib/**
           filters:
