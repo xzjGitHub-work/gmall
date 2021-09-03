@@ -1,0 +1,40 @@
+server:
+  port: 88
+
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: baidu_route
+          uri: https://www.baidu.com
+          predicates:
+            - Query=url,baidu
+
+
+        - id: qq_route
+          uri: https://www.qq.com
+          predicates:
+            - Query=url,qq
+
+
+        - id: product-route
+          uri: lb://gmall-product-@envProperties@
+          predicates:
+            - Path=/api/gmallproduct/**
+          filters:
+            - RewritePath=/api/(?<segment>.*),/$\{segment}
+
+        - id: lib-route
+          uri: lb://gmall-product-@envProperties@
+          predicates:
+            - Path=/api/gmalllib/**
+          filters:
+            - RewritePath=/api/(?<segment>.*),/$\{segment}
+
+        - id: admin-route
+          uri: lb://gmall-admin-@envProperties@
+          predicates:
+            - Path=/api/**
+          filters:
+            - RewritePath=/api/(?<segment>.*),/gmall-admin/$\{segment}
+

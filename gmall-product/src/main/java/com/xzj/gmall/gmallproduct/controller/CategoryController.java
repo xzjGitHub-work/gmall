@@ -1,6 +1,7 @@
 package com.xzj.gmall.gmallproduct.controller;
 
 import java.util.Arrays;
+import java.util.List;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,6 +30,18 @@ import com.xzj.common.utils.R;
 public class CategoryController {
     @Autowired
     private CategoryService categoryService;
+
+
+    /**
+     * 查询出所有分类的子类，以树形结构组装起来
+     */
+    @RequestMapping("/list/tree")
+    //@RequiresPermissions("gmallproduct:category:list")
+    public R listTree(){
+        List<CategoryEntity> list = categoryService.listWithTree();
+        return R.ok().put("data",list);
+    }
+
 
     /**
      * 列表
@@ -81,8 +94,25 @@ public class CategoryController {
     @RequestMapping("/delete")
     //@RequiresPermissions("gmallproduct:category:delete")
     public R delete(@RequestBody Long[] catIds){
-		categoryService.removeByIds(Arrays.asList(catIds));
 
+//		categoryService.removeByIds(Arrays.asList(catIds));
+        categoryService.removeByIdsAndList(Arrays.asList(catIds));
+
+        return R.ok();
+    }
+
+    /**
+     * 保存或者添加接口
+     */
+    @RequestMapping("/edit")
+    //@RequiresPermissions("gmallproduct:category:delete")
+    public R edit(@RequestBody CategoryEntity category){
+        try {
+            categoryService.edit(category);
+        }catch (Exception e){
+            e.printStackTrace();
+            return R.error("系统异常");
+        }
         return R.ok();
     }
 

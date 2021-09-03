@@ -3,6 +3,7 @@ package com.xzj.gmall.gmallcoupon;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 
 /**
  * 1 如何使用nacos做配置中心
@@ -30,6 +31,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  *      4）配置组Group
  *          不同时区 使用不同的group
  */
+@EnableDiscoveryClient
 @SpringBootApplication
 @MapperScan("com.xzj.gmall.gmallcoupon.dao")
 public class GamllCouponApplication {

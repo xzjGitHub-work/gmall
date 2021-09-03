@@ -3,6 +3,7 @@ package com.xzj.gmall.gmallproduct;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 
 
 /**
@@ -16,6 +17,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  *          1）@MapperScan("com.xzj.gmall.gmallproduct.dao") 扫描地址
  *          2）映射文件(*mapper.xml)文件 在application.yml中配置的mapper-location
  */
+@EnableDiscoveryClient
 @SpringBootApplication
 @MapperScan("com.xzj.gmall.gmallproduct.dao")
 public class GmallProductApplication {

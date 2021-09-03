@@ -17,6 +17,8 @@
         <module>gmall-admin</module>
         <module>gmall-generator</module>
         <module>gmall-common</module>
+        <module>gmall-gateway</module>
+        <module>gmall-lib</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>
@@ -34,6 +36,8 @@
                     <include>application.yml</include>
                     <include>application-${envProperties}.yml</include>
                     <include>bootstrap.properties</include>
+                    <include>mapper/** .xml</include>
+                    <include>mapper/**/**.xml</include>
                 </includes>
             </resource>
         </resources>
